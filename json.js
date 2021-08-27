@@ -11,9 +11,9 @@ const usuario= {
 // console.log(usuario)
 
 
-document.write(`<p>Nombre: ${usuario.nombre}</p>`)  //muestra uno por uno los datos del objeto
-document.write(`<p>Edad: ${usuario.edad}</p>`)
-document.write(`<p>Profesion: ${usuario.profesion}</p>`)
+// document.write(`<p>Nombre: ${usuario.nombre}</p>`)  //muestra uno por uno los datos del objeto
+// document.write(`<p>Edad: ${usuario.edad}</p>`)
+// document.write(`<p>Profesion: ${usuario.profesion}</p>`)
 
 
 
@@ -22,18 +22,23 @@ document.write(`<p>Profesion: ${usuario.profesion}</p>`)
 
 // c) Agregar un botón que da la opción de modificar cualquiera de los tres datos.
 
-let boton= document.querySelectorAll("button")
+let botones= document.querySelectorAll("button")
+let valor;
 
-let valorBoton= ()=>{
-    console.log(boton.text)
-  }
- 
+function valorBoton(){
+    valor= this.id
+    console.log(valor)  // con esto se el valor de cada boton
+}
+
+botones.forEach(m=> m.addEventListener("click", valorBoton)) // con esto le agrego el listener a cada boton
 
 
- /*if(boton=== boton.value){
-     document.write(`<input placeholder="Ingrese el nuevo ${boton.value}`)
-     usuario.${/*valor del boton*/ /* valor del input*/
- 
+
+
+ if(valor==="edad"){
+     document.write(`<input placeholder="Ingrese el nuevo ${valor}>`)
+    
+ }
 
 // d) Agregar un botón que permita generar un nuevo usuario.
 // e) Agregar un botón que muestre todos los usuarios.
